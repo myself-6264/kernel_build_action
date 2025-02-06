@@ -17,13 +17,13 @@ jobs:
           kernel-url: https://github.com/Asimplayz1/kernel-xiaomi-sm8350.git
           kernel-dir: Kernelicious-KSUN
           kernel-branch: Kernelicious-KSUN
-          config: sm8350_defconfig  # Replace with correct defconfig
+          config: vendor/haydn_QGKI.config  # Try haydn_QGKI.config first
           arch: arm64
-          aosp-gcc: true
+          aosp-gcc: false
           aosp-clang: true
+          aosp-clang-version: r450784
           ksu: true
           ksu-version: main
-          android-version: 14  # Updated for Android 14
-          aosp-clang-version: r383902
+          android-version: 14
           disable-lto: true
           anykernel3: true
