@@ -11,13 +11,37 @@ jobs:
       contents: read
 
     steps:
+    - name: Set up build environment
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          bc \
+          bison \
+          build-essential \
+          clang \
+          flex \
+          g++ \
+          gcc \
+          git \
+          gnupg \
+          libelf-dev \
+          libssl-dev \
+          lzop \
+          make \
+          python3 \
+          rsync \
+          unzip \
+          wget \
+          xz-utils \
+          zip
+
     - name: Build Kernel
       uses: dabao1955/kernel_build_action@main
       with:
           kernel-url: https://github.com/Asimplayz1/kernel-xiaomi-sm8350.git
           kernel-dir: Kernelicious-KSUN
           kernel-branch: Kernelicious-KSUN
-          config: vendor/haydn_QGKI.config  # Try haydn_QGKI.config first
+          config: vendor/haydn_QGKI.config  # Change if needed
           arch: arm64
           aosp-gcc: false
           aosp-clang: true
